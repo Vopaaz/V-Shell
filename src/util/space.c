@@ -1,3 +1,4 @@
+#include "space.h"
 #include <stdlib.h>
 
 char *init_buffer(int length) {

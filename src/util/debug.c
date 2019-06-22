@@ -1,3 +1,4 @@
+#include "debug.h"
 #include <stdio.h>
 
 void print_args(char **args, int count) {
