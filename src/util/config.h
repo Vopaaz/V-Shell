@@ -8,12 +8,11 @@
 #define BACKGROUND_EXECUTION_SYNTAX "*"
 #define MULTIPLE_COMMAND_SPLIT_SYNTAX "&&"
 #define print printf
-#define COPYRIGHT_MESSAGE                                                     \
-    "--------\n"                                                              \
-    "This is a minimum implemented shell coded by Vopaaz (Li YiFan) in June " \
-    "2019.\n"                                                                 \
-    "It's the course project for Computer System Architechture, Professor "   \
-    "Mao.\n"                                                                  \
+#define COPYRIGHT_MESSAGE                                                   \
+    "--------\n"                                                            \
+    "This is a very basic shell by Vopaaz (Li YiFan) in June 2019.\n"       \
+    "It's the course project for Computer System Architechture, Professor " \
+    "Mao.\n"                                                                \
     "--------\n"
 #define EXECUTION_FAILED_MESSAGE "Execution failed. Commands may be invalid.\n"
 #define CD_FAILED_MESSAGE \

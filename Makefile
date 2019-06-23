@@ -1,5 +1,5 @@
 CC = gcc
-target = main.exe
+target = vsh.exe
 
 src_main = src/vshell.c
 src_util = $(wildcard ./src/util/*.c)
