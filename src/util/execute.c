@@ -42,7 +42,7 @@ int execute_one_command(char** args) {
         return __BACKGROUND_PROCESS_ERROR__;
     } else {
         if (background) {
-            printf("Command executing in child process [%d]\n", pid);
+            printf("Command executing in the background, child process id [%d]\n", pid);
             return __EXECUTION_IN_BACKGROUND__;
         } else {
             int status;
