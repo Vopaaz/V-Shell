@@ -7,15 +7,15 @@
 #include "util/debug.h"
 #include "util/execute.h"
 #include "util/input.h"
-#include "util/space.h"
+#include "util/dir.h"
 
 int main(int argc, char const *argv[]) {
-    print(MESSAGE);
+    print(COPYRIGHT_MESSAGE);
     char **args;
 
     while (true) {
-        printf(PROMPT);
-
+        PROMPTING();
+        
         int arg_status = get_args(&args);
         if (arg_status == __NO_ARGS_INPUT__) continue;
 
@@ -24,8 +24,9 @@ int main(int argc, char const *argv[]) {
 
         if (execute_status == __BYE__) return 0;
         if (execute_status == __EXECUTION_FAILED__) {
-            printf("Execution failed. Commands may be invalid.\n");
-            return 0;
+            printf(EXECUTION_FAILED_MESSAGE);
+            return 0;  // If execution failed, the child process will not
+                       // terminate automatically, so terminate it here.
         }
     }
 
