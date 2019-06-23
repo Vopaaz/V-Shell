@@ -5,10 +5,16 @@
 #include <unistd.h>
 #include "config.h"
 #include "debug.h"
+#include "dir.h"
 
 int execute(char** args) {
+
     if (strcmp(args[0], "bye") == 0) {
         return __BYE__;
+    }
+
+    if (strcmp(args[0], "cd") == 0) {
+        return cd(args);
     }
 
     pid_t pid = fork();
