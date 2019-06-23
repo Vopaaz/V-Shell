@@ -9,7 +9,6 @@
 #include "util/execute.h"
 #include "util/input.h"
 
-
 int main(int argc, char const *argv[]) {
     print(COPYRIGHT_MESSAGE);
     char **args;
@@ -29,12 +28,14 @@ int main(int argc, char const *argv[]) {
                 break;
             case __EXECUTION_FAILED__:
                 printf(EXECUTION_FAILED_MESSAGE);
-                return 0;
+                exit(-1);
                 // If execution failed, the child process will not
                 // terminate automatically, so terminate it here.
                 break;
             case __CD_FAILED__:
                 printf(CD_FAILED_MESSAGE);
+                break;
+            case __EXECUTION_IN_BACKGROUND__:
                 break;
             default:
                 break;
