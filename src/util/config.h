@@ -6,6 +6,7 @@
     print_cwd();    \
     print(" > ");
 #define BACKGROUND_EXECUTION_SYNTAX "*"
+#define MULTIPLE_COMMAND_SPLIT_SYNTAX "&&"
 #define print printf
 #define COPYRIGHT_MESSAGE                                                     \
     "--------\n"                                                              \

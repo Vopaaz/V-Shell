@@ -25,7 +25,7 @@ bool check_and_modify_args_for_background(char*** p_args) {
     return false;
 }
 
-int execute(char** args) {
+int execute_one_command(char** args) {
     if (strcmp(args[0], "bye") == 0) {
         return __BYE__;
     }
@@ -51,3 +51,5 @@ int execute(char** args) {
         }
     }
 }
+
+int execute(char** args) { return execute_one_command(args); }
