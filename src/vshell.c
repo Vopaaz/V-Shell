@@ -1,8 +1,10 @@
+#include <signal.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "util/signalHandling.h"
 #include "util/config.h"
 #include "util/debug.h"
 #include "util/dir.h"
@@ -10,6 +12,8 @@
 #include "util/input.h"
 
 int main(int argc, char const *argv[]) {
+    signal(SIGINT, sigintHandler);
+
     print(COPYRIGHT_MESSAGE);
     char **args;
 
