@@ -25,7 +25,7 @@ bool check_and_modify_args_for_background(char*** p_args) {
     //     - The BACKGROUND_EXECUTION_SYNTAX in the arguments list will be
     //     replaced by NULL
     for (int i = 1; i < MAX_COMMAND_NUMBER - 1; i++) {
-        if ((*p_args)[i] != NULL & (*p_args)[i + 1] == NULL) {
+        if ((*p_args)[i] != NULL && (*p_args)[i + 1] == NULL) {
             if (strcmp((*p_args)[i], BACKGROUND_EXECUTION_SYNTAX) == 0) {
                 free((*p_args)[i]);
                 (*p_args)[i] = NULL;
@@ -84,9 +84,17 @@ int execute(char** args) {
     //     - args: argument array.
 
     int ix_start = 0;  // Marks the start point of one command
-    for (int i = 1; i < MAX_COMMAND_NUMBER; i++) {
+    for (int i = 1; i < MAX_COMMAND_NUMBER - 1; i++) {
         // At the end of all arguments
         if (args[i] == NULL) return execute_one_command(args + ix_start);
+
+        // Case: the last argument is MULTIPLE_COMMAND_SPLIT_SYNTAX
+        if (args[i + 1] == NULL &&
+            strcmp(args[i], MULTIPLE_COMMAND_SPLIT_SYNTAX) == 0) {
+            free(args[i]);
+            args[i] = NULL;
+            return execute_one_command(args + ix_start);
+        }
 
         // When some argument is MULTIPLE_COMMAND_SPLIT_SYNTAX
         if (strcmp(args[i], MULTIPLE_COMMAND_SPLIT_SYNTAX) == 0) {
