@@ -1,13 +1,15 @@
 #pragma once
-#define MAX_COMMAND_LENGTH 100
-#define MAX_COMMAND_NUMBER 20
+
+// Defining constants, all named self-explainable
+#define MAX_COMMAND_LENGTH 300
+#define MAX_COMMAND_NUMBER 50
 #define MAX_PATH_LENGTH 100
 #define PROMPTING() \
     print_cwd();    \
     print(" > ");
 #define BACKGROUND_EXECUTION_SYNTAX "*"
 #define MULTIPLE_COMMAND_SPLIT_SYNTAX "&&"
-#define print printf
+#define print printf  // Globally fix the typo of printf
 #define COPYRIGHT_MESSAGE                                                   \
     "--------\n"                                                            \
     "This is a very basic shell by Vopaaz (Li YiFan) in June 2019.\n"       \
@@ -18,8 +20,9 @@
 #define CD_FAILED_MESSAGE \
     "Change working directory failed. Path may be invalid.\n"
 
-#define __NO_ARGS_INPUT__ 0
-
+// Defining status/result of execution/argument-reading and parsing
+#define __NO_ARGS_INPUT__ -1
+#define __ARGS_INPUT_SUCCESS__ 1
 #define __CD_FAILED__ -2
 #define __EXECUTION_FAILED__ -1
 #define __SUCCESS__ 0
