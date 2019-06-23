@@ -53,6 +53,7 @@ $ ./vsh.exe
 
 Note that the cognominal `.h` file is not listed here.
 
+```text
 📦V-Shell
  ┣ 📂src
  ┃ ┣ 📂util
@@ -67,12 +68,12 @@ Note that the cognominal `.h` file is not listed here.
  ┣ 📜Makefile
  ┣ 📜README.md
  ┗ 📜syncDocker.bat
+```
 
-
-`src/util/config.h`: Define constants, macros, messages, syntax, etc. for the whole project.
-`src/util/debug.c`: Provide print functions for debugging.
-`src/util/dir.c`: Manage the current working directory.
-`src/util/execute.c`: Kernel of v-shell, execute the input commands.
-`src/util/input.c`: Receive user input and split them for further use.
-`src/util/signalHandling.c`: Handling `Ctrl+C` signals.
-`syncDocker.bat`: An auxilary file for syncing the source code to linux docker container and build and test.
+- `src/util/config.h`: Define constants, macros, messages, syntax, etc. for the whole project.
+- `src/util/debug.c`: Provide print functions for debugging.
+- `src/util/dir.c`: Manage the current working directory.
+- `src/util/execute.c`: Kernel of v-shell, execute the input commands.
+- `src/util/input.c`: Receive user input and split them for further use.
+- `src/util/signalHandling.c`: Handling `Ctrl+C` signals.
+- `syncDocker.bat`: An auxilary file for syncing the source code to linux docker container and build and test.
