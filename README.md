@@ -77,6 +77,7 @@ Note that the cognominal `.h` file is not listed here.
 - `src/util/execute.c`: Kernel of v-shell, execute the input commands.
 - `src/util/input.c`: Receive user input and split them for further use.
 - `src/util/signalHandling.c`: Handling `Ctrl+C` signals.
+- `src/vshell.c`: Entry point of the shell.
 - `syncDocker.bat`: An auxilary file for syncing the source code to linux docker container and build and test.
 
 
