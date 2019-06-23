@@ -47,7 +47,7 @@ $ ./vsh.exe
 - [x] When the execution is finished, display the prompt again and wait for next command
 - [x] Terminate the interpreter with command `bye`
 - [x] Allow multiple commands in one line, separated by `&&`
-- [x] Execute the command in background when the character `*` is append to the end of one command
+- [x] Execute the command in background when the character `*` is append to the end of one command. **Note that this will cause a lot commands cannot use `*` as a wildcard parameter.**
 - [x] The shell will not terminate from being interrupted by `Ctrl-C`
 
 ## Code structure
@@ -145,6 +145,10 @@ Execution failed. Commands may be invalid.
 /usr/vopaaz/v-shell > ls && commands-that-not-exist && ls
 Makefile  README.md  src  syncDocker.bat  vsh.exe
 Execution failed. Commands may be invalid.
+
+\\ Able to handle that no command follows the '&&' syntax
+/usr/vopaaz > ls &&
+v-shell
 
 \\ The shell is prevented from being interrupted by 'Ctrl+C'
 /usr/vopaaz/v-shell > ^C
