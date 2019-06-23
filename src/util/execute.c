@@ -52,4 +52,20 @@ int execute_one_command(char** args) {
     }
 }
 
-int execute(char** args) { return execute_one_command(args); }
+int execute(char** args) {
+    int ix_start = 0;
+    for (int i = 1; i < MAX_COMMAND_NUMBER; i++) {
+        if (args[i] == NULL) return execute_one_command(args + ix_start);
+
+        if (strcmp(args[i], MULTIPLE_COMMAND_SPLIT_SYNTAX) == 0) {
+            free(args[i]);
+            args[i] = NULL;
+            int status = execute_one_command(args + ix_start);
+            if (status != __SUCCESS__) {
+                return status;
+            }
+            ix_start = i + 1;
+        }
+    }
+    return __SUCCESS__;
+}

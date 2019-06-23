@@ -35,8 +35,6 @@ int main(int argc, char const *argv[]) {
             case __CD_FAILED__:
                 printf(CD_FAILED_MESSAGE);
                 break;
-            case __EXECUTION_IN_BACKGROUND__:
-                break;
             default:
                 break;
         }
