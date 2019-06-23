@@ -47,7 +47,7 @@ $ ./vsh.exe
 - [x] When the execution is finished, display the prompt again and wait for next command
 - [x] Terminate the interpreter with command `bye`
 - [x] Allow multiple commands in one line, separated by `&&`
-- [x] Execute the command in background when the character `*` is append to the end of one command. **Note that this will cause a lot commands cannot use `*` as a wildcard parameter.**
+- [x] Execute the command in background when the character `*` is append to the end of one command. **Note that this will prevent commands from using `*` as a wildcard parameter.**
 - [x] The shell will not terminate from being interrupted by `Ctrl-C`
 
 ## Code structure
@@ -75,7 +75,7 @@ Note that the cognominal `.h` file is not listed here.
 - `src/util/debug.c`: Provide print functions for debugging.
 - `src/util/dir.c`: Manage the current working directory.
 - `src/util/execute.c`: Kernel of v-shell, execute the input commands.
-- `src/util/input.c`: Receive user input and split them for further use.
+- `src/util/input.c`: Receive user input and split them.
 - `src/util/signalHandling.c`: Handling `Ctrl+C` signals.
 - `src/vshell.c`: Entry point of the shell.
 - `syncDocker.bat`: An auxilary file for syncing the source code to linux docker container and build and test.
@@ -139,7 +139,7 @@ Makefile  README.md  src  syncDocker.bat  vsh.exe
 Execution failed. Commands may be invalid.
 
 \\ If multiple commands are in one line and some of them are invalid,
-\\ only those right ones before the invalid one will execute.
+\\ only those valid ones before the invalid one will execute.
 /usr/vopaaz/v-shell > ls && commands-that-not-exist
 Makefile  README.md  src  syncDocker.bat  vsh.exe
 Execution failed. Commands may be invalid.
@@ -147,9 +147,9 @@ Execution failed. Commands may be invalid.
 Makefile  README.md  src  syncDocker.bat  vsh.exe
 Execution failed. Commands may be invalid.
 
-\\ Able to handle that no command follows the '&&' syntax
-/usr/vopaaz > ls &&
-v-shell
+\\ Able to handle when no command follows the '&&' syntax
+/usr/vopaaz/v-shell > ls &&
+Makefile  README.md  src  syncDocker.bat  vsh.exe
 
 \\ The shell is prevented from being interrupted by 'Ctrl+C'
 /usr/vopaaz/v-shell > ^C
