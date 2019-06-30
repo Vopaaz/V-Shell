@@ -67,8 +67,7 @@ Note that the cognominal `.h` file is not listed here.
  ┃ ┗ 📜vshell.c
  ┣ 📜.gitignore
  ┣ 📜Makefile
- ┣ 📜README.md
- ┗ 📜syncDocker.bat
+ ┗ 📜README.md
 ```
 
 - `src/util/config.h`: Define constants, macros, messages, syntax, etc. for the whole project.
@@ -78,7 +77,6 @@ Note that the cognominal `.h` file is not listed here.
 - `src/util/input.c`: Receive user input and split them.
 - `src/util/signalHandling.c`: Handling `Ctrl+C` signals.
 - `src/vshell.c`: Entry point of the shell.
-- `syncDocker.bat`: An auxilary file for syncing the source code to linux docker container and build and test.
 
 
 ## Demonstration Snippets
