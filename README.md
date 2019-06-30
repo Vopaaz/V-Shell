@@ -44,9 +44,11 @@ $ ./vsh.exe
 ### Supported Functions
 
 - [x] Display prompt information (current working directory) and accept a command that the user keys in and execute the command
-- [x] When the execution is finished, display the prompt again and wait for next command
-- [x] Terminate the interpreter with command `bye`
-- [x] Allow multiple commands in one line, separated by `&&`
+  - The command can be an executable in the `PATH` followed by its arguments
+  - or `cd SOME_DIR`, which changes the working directory, and is the only supported built-in command
+- [x] When the execution is finished, the prompt will be displayed again and wait for next command
+- [x] The interpreter can be terminated with command `bye`
+- [x] Multiple commands in one line are allowed, they should be separated by `&&`
 - [x] Execute the command in background when the character `*` is append to the end of one command. **Note that this will prevent commands from using `*` as a wildcard parameter.**
 - [x] The shell will not terminate from being interrupted by `Ctrl-C`
 
@@ -80,6 +82,8 @@ Note that the cognominal `.h` file is not listed here.
 
 
 ## Demonstration Snippets
+
+In the following demonstration, the lines start with `\\` are comments and explanations, while others are either output in the console or the user input.
 
 ```text
 \\ Entering the v-shell
