@@ -14,7 +14,7 @@ It's the course project (option 1) for Computer System Architechture, Professor 
     - [Prerequesites](#Prerequesites)
     - [Build & Run](#Build--Run)
     - [Supported Functions](#Supported-Functions)
-  - [Code structure](#Code-structure)
+  - [Code Structure](#Code-Structure)
   - [Demonstration Snippets](#Demonstration-Snippets)
 
 <!-- /code_chunk_output -->
@@ -52,7 +52,7 @@ $ ./vsh.exe
 - [x] Execute the command in background when the character `*` is append to the end of one command. **Note that this will prevent commands from using `*` as a wildcard parameter.**
 - [x] The shell will not terminate from being interrupted by `Ctrl-C`
 
-## Code structure
+## Code Structure
 
 Note that the cognominal `.h` file is not listed here.
 
